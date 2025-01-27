@@ -1,7 +1,14 @@
 #!/bin/bash
 
+# Check if python3 command exists
+if command -v python3 &>/dev/null; then
+    PYTHON_CMD=python3
+else
+    PYTHON_CMD=python
+fi
+
 # Create and activate virtual environment
-python -m venv venv
+$PYTHON_CMD -m venv venv
 source venv/bin/activate
 
 # Upgrade pip
